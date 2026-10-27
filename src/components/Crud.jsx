@@ -42,7 +42,7 @@ export default function Crud({ rows, cols, fields, blank, onSave, onDelete, name
           </form>
         </Modal>)}
       {del && (
-        <Modal title="Hapus data?" sub="Tindakan ini tidak dapat dibatalkan." onClose={() => setDel(null)}>
+        <Modal title={`Hapus ${name}?`} sub={`Data ${del.nama || del.email || del.sku || name} akan dihapus permanen. Tindakan ini tidak dapat dibatalkan.`} onClose={() => setDel(null)}>
           <div className="mfoot"><button className="btn" onClick={() => setDel(null)}>Batal</button><button className="btn danger" onClick={() => { onDelete(del); setDel(null) }}>Ya, Hapus</button></div>
         </Modal>)}
       {extraModal}

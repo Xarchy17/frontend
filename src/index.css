@@ -40,3 +40,34 @@ table{width:100%;border-collapse:collapse}th{font-size:10px;color:var(--mut);let
 .login{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;background:#fff}.hero{background:linear-gradient(135deg,#4f46e5 30%,#1e1b3a);color:#fff;padding:32px 48px;display:flex;flex-direction:column;justify-content:space-between}.hero h2{font-size:34px;line-height:1.2;margin-bottom:18px}.hero p{color:#c7d2fe;max-width:440px;line-height:1.6}.hero small{color:#a5b4fc}
 .login form{align-self:center;justify-self:center;width:min(440px,86%);display:flex;flex-direction:column;gap:14px}.login form h2{font-size:22px}.login .field{margin:0}.alert{display:flex;gap:10px;background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;padding:12px;border-radius:8px}.alert p{font-size:12px}.pw{position:relative}.pw button{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--mut)}.link{color:var(--p);text-align:center;font-weight:600;display:flex;gap:4px;align-items:center;justify-content:center}.hint{text-align:center;color:var(--mut);font-size:11px}.okmsg{color:#047857;background:#ecfdf5;padding:12px;border-radius:8px}
 @media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}.grid2c,.split,.login{grid-template-columns:1fr}.hero{display:none}aside{width:70px}aside a{font-size:0}.brand div,.sec{display:none}}
+
+.brand{display:block;padding:0 4px 14px}
+.brand img{display:block;width:100%;height:auto;object-fit:contain;border-radius:0}
+.brand-light{width:min(280px,100%);padding:8px;background:#fff;border-radius:14px}
+.brand-light img{width:100%}
+aside .brand{padding:0 0 14px}
+.hero{justify-content:center}
+.hero-copy{width:min(100%,480px);margin:auto;text-align:center}
+.hero p{margin-inline:auto}
+.hero small{margin-top:auto;text-align:center}
+.page-transition{animation:page-enter 220ms cubic-bezier(.2,.7,.2,1) both}
+.tab-transition{animation:tab-enter 180ms cubic-bezier(.2,.7,.2,1) both}
+aside a,.btn,.icon,.quick,.tabs button,.pager button{transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms ease,box-shadow 160ms ease}
+aside a:hover,.quick:hover{transform:translateY(-1px)}
+.btn:not(:disabled):active,.icon:active,.pager button:not(:disabled):active{transform:scale(.97)}
+.tabs button:hover{color:var(--p)}
+@keyframes page-enter{from{opacity:0}to{opacity:1}}
+@keyframes tab-enter{from{opacity:0}to{opacity:1}}
+.app-loading{min-height:100vh;display:grid;place-items:center;background:var(--bg)}
+.app-loading::after{content:"";width:30px;height:30px;border:3px solid var(--line);border-top-color:var(--p);border-radius:50%;animation:app-loading-spin 650ms linear infinite}
+@keyframes app-loading-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(max-width:900px){aside .brand{display:flex;justify-content:center;padding:0 0 14px}aside .brand img{display:none}aside .brand::before{content:"";display:block;width:34px;height:34px;background:url('/anna-brew-mark.png') center/contain no-repeat}}
+.app{--page-gutter:28px;--brand-row-height:126px}
+main>header,.content{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+main>header{min-height:var(--brand-row-height)}
+.discrepancy-row{cursor:pointer}
+.discrepancy-detail{max-width:1000px}
+.discrepancy-detail .grid2{margin-top:8px;gap:20px}
+.discrepancy-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+@media(max-width:900px){.app{--brand-row-height:64px}}
